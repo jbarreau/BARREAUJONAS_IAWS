@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"  xmlns="http://iaws/ws/contractfirst/exemple"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://http://barreaujonas.com/iaws/schemas ReleveNotes.xsd"?>
+<enregistrementResponse>
+    <etat>KO</etat>
+    <codeError>110</codeError>
+    <descError>Adresse email invalide</descError>
+</enregistrementResponse>

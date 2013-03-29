@@ -15,23 +15,41 @@ import java.net.URL;
 
 public class OSMClient {
     private static final String OSMURL = "http://nominatim.openstreetmap.org/search?format=xml&q=";
+    private String display_name;
+    private String adresse;
+    private float lat;
+    private float lon;
 
+    public float getLat() {
+        return lat;
+    }
 
-    public static void main(String[] args) {
-        OSMClient ret = search("68 rue leon bonnat");
+    public String getDisplay_name() {
+        return display_name;
+    }
+
+    public float getLon() {
+        return lon;
+    }
+
+    public OSMClient(String Padresse) {
+        adresse = Padresse;
+        lat = 0;
+        lon = 0;
     }
 
     /**
-     * @param Padresse
-     * @return false if pAdresse not found on OSM
+     * on suppose qu'une adresse ne retournera toujour qu'un resultat, non valide sinon
+     *
+     * @return false if Adresse not found on OSM
      */
-    public static OSMClient search(String Padresse) {
+    public boolean search() throws IOException {
         //adresse = Padresse;
-        String requeteOSM = OSMURL + Padresse;
+        String requeteOSM = OSMURL + adresse;
 
-        URL osm = null;
         try {
-            osm = new URL(requeteOSM);
+            URL osm = new URL(requeteOSM);
+
             DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = dbfac.newDocumentBuilder();
 
@@ -39,25 +57,23 @@ public class OSMClient {
             Document document = docBuilder.parse(connection.getInputStream());
             connection.disconnect();
 
-
             NodeList ele = document.getDocumentElement().getElementsByTagName("place");
             NamedNodeMap att = ele.item(0).getAttributes();
-            float lat = Float.valueOf(att.getNamedItem("lat").getNodeValue());
-            float lon = Float.valueOf(att.getNamedItem("lon").getNodeValue());
-            System.out.println("lat : " + lat + ", lon :" + lon);
+
+            lat = Float.valueOf(att.getNamedItem("lat").getNodeValue());
+            lon = Float.valueOf(att.getNamedItem("lon").getNodeValue());
+            display_name = att.getNamedItem("display_name").getNodeValue();
 
         } catch (MalformedURLException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
+            return false;//To change body of catch statement use File | Settings | File Templates.
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
+            return false;//To change body of catch statement use File | Settings | File Templates.
         } catch (SAXException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
+            return false;//To change body of catch statement use File | Settings | File Templates.
         }
-        /*if (true)//OSM found adresse
-              return new OSMClient(lat, lont, Padresse);
-          else */
-        return null;
+        return true;
     }
 }
