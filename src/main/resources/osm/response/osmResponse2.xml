@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<searchresults timestamp='Thu, 21 Mar 13 14:03:03 +0000'
+               attribution='Data © OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright'
+               querystring='london' polygon='false'
+               exclude_place_ids='97592906,4455807,97376071,441611,97739688,3678885682,3678885683,42849137,496596,483074,445229'
+               more_url='http://nominatim.openstreetmap.org/search?format=xml&amp;exclude_place_ids=97592906,4455807,97376071,441611,97739688,3678885682,3678885683,42849137,496596,483074,445229&amp;accept-language=fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4&amp;q=london'>
+    <place place_id='97592906' osm_type='relation' osm_id='65606'
+           place_rank='16'
+           boundingbox="51.2867584228516,51.6918754577637,-0.510375142097473,0.334015518426895"
+           lat='51.5072759' lon='-0.1276597'
+           display_name='Londres, Grand Londres, Angleterre, Royaume-Uni, European Union'
+           class='place' type='city' importance='0.8654895765402'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png'/>
+    <place place_id='4455807' osm_type='node' osm_id='485248691'
+           place_rank='16'
+           boundingbox="42.988094329834,42.9880981445312,-81.2460327148438,-81.2460250854492"
+           lat='42.988097' lon='-81.2460295' display_name='London, Ontario, Canada'
+           class='place' type='city' importance='0.6415723047601'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png'/>
+    <place place_id='97376071' osm_type='relation' osm_id='130591'
+           place_rank='16'
+           boundingbox="37.0797576904297,37.1522636413574,-84.1262664794922,-84.0359497070312"
+           lat='37.1289771' lon='-84.0832646'
+           display_name='London, Laurel County, Kentucky, États-Unis d&#039;Amérique'
+           class='place' type='city' importance='0.49529223844486'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png'/>
+    <place place_id='441611' osm_type='node' osm_id='153408665'
+           place_rank='19'
+           boundingbox="43.0477752685547,43.047779083252,-89.0128936767578,-89.0128860473633"
+           lat='43.0477775' lon='-89.0128881'
+           display_name='London, Dane, Wisconsin, États-Unis d&#039;Amérique'
+           class='place' type='hamlet' importance='0.447828369551'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png'/>
+    <place place_id='97739688' osm_type='relation' osm_id='182481'
+           place_rank='16'
+           boundingbox="39.8592796325684,39.9217872619629,-83.4789276123047,-83.3899917602539"
+           lat='39.8864493' lon='-83.448253'
+           display_name='London, Madison County, Ohio, États-Unis d&#039;Amérique'
+           class='place' type='city' importance='0.43543898169688'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png'/>
+    <place place_id='3678885682' osm_type='relation' osm_id='2730965'
+           place_rank='30'
+           boundingbox="36.4734420776367,36.4884376525879,-119.449775695801,-119.438537597656"
+           lat='36.48094095' lon='-119.443968205081'
+           display_name='London, Avenue 380, London, Tulare County, Californie, 93673, États-Unis d&#039;Amérique'
+           class='boundary' type='census' importance='0.41045232539126'/>
+    <place place_id='42849137' osm_type='way' osm_id='33062722'
+           place_rank='16'
+           boundingbox="35.3155746459961,35.3381423950195,-93.2726974487305,-93.187370300293"
+           lat='35.3268585' lon='-93.2405010530443'
+           display_name='London, Pope County, Arkansas, États-Unis d&#039;Amérique'
+           class='place' type='city' importance='0.4084484386218'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_city.p.20.png'/>
+    <place place_id='496596' osm_type='node' osm_id='154301303'
+           place_rank='19'
+           boundingbox="38.1945457458496,38.1945495605469,-81.3687286376953,-81.3687210083008"
+           lat='38.1945491' lon='-81.3687243'
+           display_name='London, Kanawha, Virginie-Occidentale, États-Unis d&#039;Amérique'
+           class='place' type='hamlet' importance='0.40707848858916'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png'/>
+    <place place_id='483074' osm_type='node' osm_id='154083583'
+           place_rank='19'
+           boundingbox="40.9103317260742,40.9103355407715,-82.6293487548828,-82.6293411254883"
+           lat='40.9103338' lon='-82.6293412'
+           display_name='London, Richland, Ohio, États-Unis d&#039;Amérique'
+           class='place' type='hamlet' importance='0.375'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png'/>
+    <place place_id='445229' osm_type='node' osm_id='154069758'
+           place_rank='19'
+           boundingbox="42.0200424194336,42.0200462341309,-83.6132736206055,-83.6132659912109"
+           lat='42.0200442' lon='-83.6132701'
+           display_name='London, Monroe, Michigan, États-Unis d&#039;Amérique'
+           class='place' type='village' importance='0.375'
+           icon='http://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png'/>
+</searchresults>

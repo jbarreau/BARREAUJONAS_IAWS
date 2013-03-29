@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<searchresults timestamp='Thu, 21 Mar 13 14:02:13 +0000'
+               attribution='Data © OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright'
+               querystring='68 rue leon bonnat' polygon='false' exclude_place_ids='17230442'
+               more_url='http://nominatim.openstreetmap.org/search?format=xml&amp;exclude_place_ids=17230442&amp;accept-language=fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4&amp;q=68+rue+leon+bonnat'>
+    <place place_id='17230442' osm_type='node' osm_id='1531318624'
+           place_rank='30'
+           boundingbox="43.5785179138184,43.5785217285156,1.46195006370544,1.46195018291473"
+           lat='43.5785198' lon='1.4619501'
+           display_name='68, Rue Léon Bonnat, 5.2, 5, Toulouse, Haute-Garonne, Midi-Pyrénées, 31400, France, European Union'
+           class='place' type='house' importance='0.601'/>
+</searchresults>

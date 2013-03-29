@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"  xmlns="http://iaws/ws/contractfirst/exemple"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://http://barreaujonas.com/iaws/schemas ReleveNotes.xsd"?>
+<enregistrementRequest>
+    <nom>dupond</nom>
+    <prenom>daniel</prenom>
+    <adrMail>dupond.daniel@univ-tlse3.fr</adrMail>
+    <adrPostale>68 rue bonnat 31400 toulouse</adrPostale>
+</enregistrementRequest>
