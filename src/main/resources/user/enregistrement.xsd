@@ -6,19 +6,21 @@
     <xs:element name="enregistrementRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nom" type="xs:string"></xs:element>
-                <xs:element name="prenom" type="xs:string"></xs:element>
-                <xs:element name="adrMail" type="xs:string"></xs:element>
-                <xs:element name="adrPostale" type="xs:string"></xs:element>
+                <xs:element name="nom" type="xs:string"/>
+                <xs:element name="prenom" type="xs:string"/>
+                <xs:element name="adrMail" type="xs:string"/>
+                <xs:element name="adrPostale" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+
     <xs:element name="enregistrementResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="etat" type="xs:string"></xs:element>
-                <xs:element name="codeError" type="xs:int"></xs:element>
-                <xs:element name="descError" type="xs:string"></xs:element>
+                <xs:element name="etat" type="xs:string"/>
+                <xs:element name="codeError" type="xs:int"/>
+                <xs:element name="descError" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

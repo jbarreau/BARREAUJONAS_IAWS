@@ -14,7 +14,7 @@ public class User {
 
 
     public static void main(String[] args) {
-        User u = new User("barreau", "julien", "onSenFou@univ-tlse3.fr", "68 rue leon bonnat 31400");
+        User u = new User("barreau", "julien", "onSenFou@univ-tlse3.fr", "11 chemin du canal 31400");
         u.globalCheck();
 
         System.out.println(u);

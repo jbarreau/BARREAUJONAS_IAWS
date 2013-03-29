@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"  xmlns="http://iaws/ws/contractfirst/exemple"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://barreaujonas.com/iaws/schemas ReleveNotes.xsd"?>
-<enregistrementRequest>
-    <nom>Durand</nom>
-    <prenom>remi</prenom>
-    <adrMail>remi.durand@univ-tlse3.fr</adrMail>
-    <adrPostale>11 chemin du canal 31400</adrPostale>
-</enregistrementRequest>
+<localisationRequest>
+    <id_user>1</id_user>
+    <rayon>20</rayon>
+</localisationRequest>

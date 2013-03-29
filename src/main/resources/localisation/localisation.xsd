@@ -1,0 +1,34 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://barreaujonas.com/iaws/schemas"
+        >
+
+    <xs:element name="localisationRequest">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="id_user" type="xs:int"/>
+                <xs:element name="rayon" type="xs:int"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="localisationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="utilisateur" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id_user" type="xs:int"/>
+                            <xs:element name="nom" type="xs:string"/>
+                            <xs:element name="adresse" type="xs:string"/>
+                            <xs:element name="lat" type="xs:float"/>
+                            <xs:element name="lon" type="xs:float"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
