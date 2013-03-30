@@ -65,13 +65,16 @@ public class OSMClient {
             display_name = att.getNamedItem("display_name").getNodeValue();
 
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return false;//To change body of catch statement use File | Settings | File Templates.
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return false;//To change body of catch statement use File | Settings | File Templates.
         } catch (SAXException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            return false;//To change body of catch statement use File | Settings | File Templates.
+        } catch (java.lang.NullPointerException e) {
+            //e.printStackTrace();
             return false;//To change body of catch statement use File | Settings | File Templates.
         }
         return true;

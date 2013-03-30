@@ -1,5 +1,5 @@
 package endpoint;
-                  /*
+             /*
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 import org.lightcouch.CouchDbClient;
@@ -39,8 +39,13 @@ public class EnregistrementEndPoint extends AbstractJDomPayloadEndpoint {
 	    nameExpression = XPath.newInstance("concat(//hr:FirstName,' ',//hr:LastName)");
 	    nameExpression.addNamespace(namespace);
 	}
-	
-	 @PayloadRoot(namespace = NAMESPACE_URI, localPart = "HolidayRequest")                  
+
+    @Override
+    protected Element invokeInternal(org.jdom2.Element element) throws Exception {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "HolidayRequest")
 	  public void handleHolidayRequest(@RequestPayload Element holidayRequest)               
 	      throws Exception {
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -50,5 +55,4 @@ public class EnregistrementEndPoint extends AbstractJDomPayloadEndpoint {
 
 	    humanResourceService.bookHoliday(startDate, endDate, name);
 	  }
-}
-                                       */
+}    */
