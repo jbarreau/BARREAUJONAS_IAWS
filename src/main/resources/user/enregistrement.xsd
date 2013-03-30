@@ -19,8 +19,8 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="etat" type="xs:string"/>
-                <xs:element name="codeError" type="xs:int"/>
-                <xs:element name="descError" type="xs:string"/>
+                <xs:element name="codeError" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="descError" type="xs:string" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
