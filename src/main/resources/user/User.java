@@ -17,14 +17,6 @@ public class User {
     private float longitude;
 
 
-    public static void main(String[] args) {
-        User u1 = new User("barreau", "julien", "julien.barreau@univ-tlse3.fr", "62 rue leon bonnat 31400");
-        User u2 = new User("Durand", "remi", "remi.durand@univ-tlse3.fr@univ-tlse3.fr", "11 chemin du canal 31400");
-        u1.globalCheck();
-
-        System.out.println(u2);
-    }
-
     public User(String pnom, String pPrenom, String pAdrMail, String pAdrPostale) {
         nom = pnom;
         prenom = pPrenom;

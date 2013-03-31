@@ -23,9 +23,9 @@ public class CouchDB {
     }
 
     public Response addUser(User u) {
-        u.setIdRev(null, null);
         Response res = null;
         if (u.globalCheck()) {
+            u.setIdRev(null, null);
             res = dbClient.save(u);
             u.setIdRev(res.getId(), res.getRev());
         } else {
@@ -59,19 +59,4 @@ public class CouchDB {
         return dbClient.remove(id, rev);
     }
 
-    public static void main(String[] args) {
-        CouchDB db = new CouchDB();
-
-        User u1 = new User("barreau", "julien", "julien.barreau@univ-tlse3.fr", "62 rue leon bonnat 31400");
-        User u2 = new User("Durand", "remi", "remi.durand@univ-tlse3.fr@univ-tlse3.fr", "11 chemin du canal 31400");
-        User uError = new User("Durand", "remi", "remi.dur456@univ-tlse3.fr@univ-tlse3.fr", "qsdcanal 31400");
-
-        db.addUser(u1);
-        db.addUser(u2);
-        db.addUser(uError);
-
-        for (User user : db.getAllUsers()) {
-            System.out.println(user + "\n");
-        }
-    }
 }
