@@ -45,7 +45,7 @@ public class OSMClient {
      */
     public boolean search() throws IOException {
         //adresse = Padresse;
-        String requeteOSM = OSMURL + adresse;
+        String requeteOSM = OSMURL + adresse.replaceAll(" ", "+");
 
         try {
             URL osm = new URL(requeteOSM);
@@ -55,13 +55,21 @@ public class OSMClient {
 
             HttpURLConnection connection = (HttpURLConnection) osm.openConnection();
             Document document = docBuilder.parse(connection.getInputStream());
+            /*File f = new File("test.XML");
+            FileOutputStream fis = new FileOutputStream(f);
+            byte []b = new byte[4096];
+            connection.getInputStream().read(b);
+            fis.write(b);
+            fis.close();    */
+
+
             connection.disconnect();
 
             NodeList ele = document.getDocumentElement().getElementsByTagName("place");
             NamedNodeMap att = ele.item(0).getAttributes();
 
-            lat = Float.valueOf(att.getNamedItem("lat").getNodeValue());
-            lon = Float.valueOf(att.getNamedItem("lon").getNodeValue());
+            lat = Float.parseFloat(att.getNamedItem("lat").getNodeValue());
+            lon = Float.parseFloat(att.getNamedItem("lon").getNodeValue());
             display_name = att.getNamedItem("display_name").getNodeValue();
 
         } catch (MalformedURLException e) {

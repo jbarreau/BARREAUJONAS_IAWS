@@ -22,16 +22,16 @@ public class OSMClientTest extends TestCase {
     public void testU1() throws Exception {
         osm = new OSMClient(u1.getAdrPostale());
         assertTrue(osm.search());
-        assertEquals(43.5785198, osm.getLat());
-        //assertEquals(1.4619501,osm.getLon());
+        assertTrue(new Float(osm.getLat()).compareTo(new Float(43.5780381)) == 0);
+        assertTrue(new Float(osm.getLon()).compareTo(new Float(1.4617464)) == 0);
 
     }
 
     public void testU2() throws Exception {
         osm = new OSMClient(u2.getAdrPostale());
         assertTrue(osm.search());
-        assertEquals(43.5726569, osm.getLat());
-        assertEquals(1.4626106, osm.getLon());
+        assertTrue(new Float(osm.getLat()).compareTo(new Float(43.5726569)) == 0);
+        assertTrue(new Float(osm.getLon()).compareTo(new Float(1.4626106)) == 0);
 
     }
 
