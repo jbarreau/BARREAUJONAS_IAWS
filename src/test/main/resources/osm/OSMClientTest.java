@@ -1,7 +1,9 @@
-package resources.osm;
+package main.resources.osm;
 
 import junit.framework.TestCase;
+import resources.osm.OSMClient;
 import resources.user.User;
+
 
 /**
  * Created with IntelliJ IDEA.

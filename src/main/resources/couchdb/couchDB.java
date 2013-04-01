@@ -23,25 +23,10 @@ public class CouchDB {
     }
 
     public Response addUser(User u) {
-        Response res = null;
-        if (u.globalCheck()) {
-            u.setIdRev(null, null);
-            res = dbClient.save(u);
-            u.setIdRev(res.getId(), res.getRev());
-        } else {
-            if (!u.mailCheck()) {
-                System.err.println("\t\t110 mail non @univ-tlse3");
-                return null;
-            }
-            if (!u.alreadyExist()) {
-                System.err.println("\t\t100 mail deja utilisé");
-                return null;
-            }
-            if (!u.OSMFound()) {
-                System.err.println("\t\t200 adresse postale non connu");
-                return null;
-            }
-        }
+        assert (u.globalCheck());
+        //u.setIdRev(null, null);
+        Response res = dbClient.save(u);
+        u.setIdRev(res.getId(), res.getRev());
         return res;
     }
 
@@ -51,12 +36,21 @@ public class CouchDB {
         return users.query(User.class);
     }
 
+    public User getUser(int id) {
+        List<User> lu = getAllUsers();
+        for (User u : lu) {
+            if (u.get_id() == id)
+                return u;
+        }
+        return null;
+    }
+
     public Response remove(User u) {
         return dbClient.remove(u);
     }
 
-    public Response remove(String id, String rev) {
-        return dbClient.remove(id, rev);
+    public Response remove(Integer id, Integer rev) {
+        return dbClient.remove(id.toString(), rev.toString());
     }
 
 }

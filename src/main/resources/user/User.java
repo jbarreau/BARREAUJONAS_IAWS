@@ -7,14 +7,14 @@ import resources.osm.OSMClient;
 import java.io.IOException;
 
 public class User {
-    private String _id;
-    private String _rev;
+    private String _id = null;
+    private String _rev = null;
     private String nom;
     private String prenom;
     private String adrMail;
     private String adrPostale;
-    private float latitude;
-    private float longitude;
+    private float latitude = 0;
+    private float longitude = 0;
 
 
     public User(String pnom, String pPrenom, String pAdrMail, String pAdrPostale) {
@@ -65,8 +65,12 @@ public class User {
 
         User user = (User) o;
 
-        if (Float.compare(user.latitude, latitude) != 0) return false;
-        if (Float.compare(user.longitude, longitude) != 0) return false;
+        //if (Float.compare(user.latitude, latitude) != 0) return false;
+        //if (Float.compare(user.longitude, longitude) != 0) return false;
+        //if (_id != null ? !_id.equals(user._id) : user._id != null) return false;
+        if (_id != null && user._id != null) if (!_id.equals(user._id)) return false;
+        //if (_rev != null ? !_rev.equals(user._rev) : user._rev != null) return false;
+        if (_rev != null && user._rev != null) if (!_rev.equals(user._rev)) return false;
         if (!adrMail.equals(user.adrMail)) return false;
         if (!adrPostale.equals(user.adrPostale)) return false;
         if (!nom.equals(user.nom)) return false;
@@ -77,26 +81,25 @@ public class User {
 
     @Override
     public int hashCode() {
-        int result = nom.hashCode();
+        int result = _id != null ? _id.hashCode() : 0;
+        result = 31 * result + (_rev != null ? _rev.hashCode() : 0);
+        result = 31 * result + nom.hashCode();
         result = 31 * result + prenom.hashCode();
         result = 31 * result + adrMail.hashCode();
         result = 31 * result + adrPostale.hashCode();
-        result = 31 * result + (latitude != +0.0f ? Float.floatToIntBits(latitude) : 0);
-        result = 31 * result + (longitude != +0.0f ? Float.floatToIntBits(longitude) : 0);
+        //result = 31 * result + (latitude != +0.0f ? Float.floatToIntBits(latitude) : 0);
+        //result = 31 * result + (longitude != +0.0f ? Float.floatToIntBits(longitude) : 0);
         return result;
     }
 
-    @Override
-    public String toString() {
-        return nom + " " + prenom + "\n" + adrPostale + "\n" + adrMail + "\nlatitude\tlongitude\n" + latitude + "\t" + longitude;
+    public Integer get_id() {
+        if (_id == null) return null;
+        else return Integer.decode(_id);
     }
 
-    public String get_id() {
-        return _id;
-    }
-
-    public String get_rev() {
-        return _rev;
+    public Integer get_rev() {
+        if (_rev == null) return null;
+        else return Integer.decode(_rev);
     }
 
     public String getNom() {

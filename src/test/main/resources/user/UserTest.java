@@ -1,7 +1,8 @@
-package resources.user;
+package main.resources.user;
 
 import junit.framework.TestCase;
 import resources.couchdb.CouchDB;
+import resources.user.User;
 
 /**
  * Created with IntelliJ IDEA.
