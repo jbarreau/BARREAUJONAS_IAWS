@@ -25,7 +25,7 @@ import static org.springframework.ws.test.server.ResponseMatchers.payload;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @DirtiesContext()
-@ContextConfiguration("/application-context.xml")
+@ContextConfiguration("application-context.xml")
 public class EnregistrementEndPointIntegrationTest {
 
 

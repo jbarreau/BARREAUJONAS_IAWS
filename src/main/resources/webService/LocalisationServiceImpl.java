@@ -4,6 +4,7 @@ import org.w3c.dom.Element;
 import resources.couchdb.CouchDB;
 import resources.osm.OSMClient;
 import resources.user.User;
+import resources.xml.XMLWriter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,11 +30,8 @@ public class LocalisationServiceImpl implements LocalisationService {
 
         }
 
-        Element ret = null;
-        /*
-        XMLWriter writer = new XMLClientWriter();
-        ret = writer.createLocalisationResponse(centralUser,rayonKM,voisins);
-         */
+        XMLWriter writer = new XMLWriter();
+        Element ret = writer.createLocalisationResponse(voisins);
 
 
         return ret;  //To change body of implemented methods use File | Settings | File Templates.
