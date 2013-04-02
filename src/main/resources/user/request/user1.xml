@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"  xmlns="http://iaws/ws/contractfirst/exemple"
+<?xml version="1.0" encoding="UTF-8"  xmlns="barreaujonas.com/iaws"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://barreaujonas.com/iaws/schemas ReleveNotes.xsd"?>
+        xsi:schemaLocation="http://barreaujonas.com/iaws/webapp/WEB-INF/xsd/enregistrement.xsd"?>
 <enregistrementRequest>
     <nom>barreau</nom>
     <prenom>julien</prenom>

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"  xmlns="http://iaws/ws/contractfirst/exemple"
+<?xml version="1.0" encoding="UTF-8"  xmlns="barreaujonas.com/iaws"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://barreaujonas.com/iaws/schemas ReleveNotes.xsd"?>
+        xsi:schemaLocation="http://barreaujonas.com/iaws/webapp/WEB-INF/xsd/localisation.xsd"?>
 <localisationResponse>
     <utilisateur>
         <id_user>2</id_user>
         <nom>Durand</nom>
         <adresse>11 chemin du canal 31400</adresse>
-        <lat>43.054295</lat>
-        <lon>2.5124876</lon>
+        <lat>43.5726569</lat>
+        <lon>1.4626106</lon>
     </utilisateur>
 </localisationResponse>

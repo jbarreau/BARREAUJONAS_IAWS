@@ -154,4 +154,8 @@ public class User {
         _id = id;
         _rev = rev;
     }
+
+    public String toString() {
+        return nom + " " + prenom + " " + adrMail + "\n" + adrPostale + "\nlatitude\tlongitude\n" + latitude + "\t" + longitude;
+    }
 }

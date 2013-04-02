@@ -1,16 +1,10 @@
 package resources.osm;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import resources.user.User;
+import resources.xml.XMLReader;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class OSMClient {
@@ -49,42 +43,37 @@ public class OSMClient {
 
         try {
             URL osm = new URL(requeteOSM);
-
-            DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = dbfac.newDocumentBuilder();
-
             HttpURLConnection connection = (HttpURLConnection) osm.openConnection();
-            Document document = docBuilder.parse(connection.getInputStream());
-            /*File f = new File("test.XML");
-            FileOutputStream fis = new FileOutputStream(f);
-            byte []b = new byte[4096];
-            connection.getInputStream().read(b);
-            fis.write(b);
-            fis.close();    */
-
-
+            XMLReader xml = new XMLReader(connection.getInputStream());
             connection.disconnect();
 
-            NodeList ele = document.getDocumentElement().getElementsByTagName("place");
-            NamedNodeMap att = ele.item(0).getAttributes();
+            this.lat = xml.getLat();
+            this.lon = xml.getLon();
+            this.display_name = xml.getAdr();
 
-            lat = Float.parseFloat(att.getNamedItem("lat").getNodeValue());
-            lon = Float.parseFloat(att.getNamedItem("lon").getNodeValue());
-            display_name = att.getNamedItem("display_name").getNodeValue();
-
-        } catch (MalformedURLException e) {
-            //e.printStackTrace();
-            return false;//To change body of catch statement use File | Settings | File Templates.
-        } catch (ParserConfigurationException e) {
-            //e.printStackTrace();
-            return false;//To change body of catch statement use File | Settings | File Templates.
-        } catch (SAXException e) {
-            //e.printStackTrace();
-            return false;//To change body of catch statement use File | Settings | File Templates.
-        } catch (java.lang.NullPointerException e) {
+        } catch (Exception e) {
             //e.printStackTrace();
             return false;//To change body of catch statement use File | Settings | File Templates.
         }
         return true;
+    }
+
+    public static float Distance(User u1, User u2) {
+        double lat0 = u1.getLatitude();
+        double lon0 = u1.getLongitude();
+        double lat1 = u2.getLatitude();
+        double lon1 = u2.getLongitude();
+        int R = 6371; // km
+        double dLat = Math.toRadians(lat1 - lat0);
+        double dLon = Math.toRadians(lon1 - lon0);
+        lat0 = Math.toRadians(lat0);
+        lat1 = Math.toRadians(lat1);
+
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat0) * Math.cos(lat1);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double d = R * c;
+
+        return new Double(d).floatValue();
     }
 }

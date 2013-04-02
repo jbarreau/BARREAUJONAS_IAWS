@@ -1,5 +1,6 @@
 package resources.webService;
 
+
 import org.lightcouch.Response;
 import org.w3c.dom.Element;
 import resources.couchdb.CouchDB;
@@ -26,7 +27,7 @@ public class EnregistrementServiceImpl implements EnregistrementService {
         }
         if (!user.OSMFound()) {
             System.err.println("\t\t200 adresse postale non reconnu");
-            return null/*writer.createEnregistrementResponse("KO",200,"t200 adresse postale non reconnu")*/;
+            return null/*writer.createEnregistrementResponse("KO",200,"adresse postale non reconnu")*/;
         }
         CouchDB db = new CouchDB();
         Response res = db.addUser(user);

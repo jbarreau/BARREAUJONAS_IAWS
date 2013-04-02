@@ -5,7 +5,29 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services-2.0.xsd">
 
+
     <sws:annotation-driven/>
+    <bean id="EnregistrementEndPoint" class="resources.webService.endpoint.EnregistrementEndPoint">
+        <constructor-arg name="enregistrementService" ref="enregistrementService"/>
+    </bean>
+    <bean id="enregistrementService" class="resources.webService.EnregistrementServiceImpl"/>
 
 
+    <bean id="localisationEndPoint" class="resources.webService.endpoint.LocalisationEndPoint">
+        <constructor-arg name="localisationService" ref="localisationService"/>
+    </bean>
+    <bean id="localisationService" class="resources.webService.LocalisationServiceImpl"/>
+
+    <sws:dynamic-wsdl id="enregistrement"
+                      portTypeName="http://barreaujonas.com/iaws/schemas"
+                      locationUri="/enregistrementService/"
+                      targetNamespace="http://barreaujonas.com/iaws/schemas">
+        <sws:xsd location="/main/resources/user/enregistrement.xsd"/>
+    </sws:dynamic-wsdl>
+    <sws:dynamic-wsdl id="localisation"
+                      portTypeName="http://barreaujonas.com/iaws/schemas"
+                      locationUri="/localisationService/"
+                      targetNamespace="http://barreaujonas.com/iaws/schemas">
+        <sws:xsd location="/main/resources/localisation/localisation.xsd"/>
+    </sws:dynamic-wsdl>
 </beans>

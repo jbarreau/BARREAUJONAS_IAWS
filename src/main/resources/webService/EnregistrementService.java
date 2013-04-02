@@ -11,6 +11,5 @@ import resources.user.User;
  */
 public interface EnregistrementService {
 
-    public Element enregistreUser(
-            User user);
+    public Element enregistreUser(User user);
 }

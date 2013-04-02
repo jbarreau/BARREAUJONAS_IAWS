@@ -2,6 +2,7 @@ package resources.webService;
 
 import org.w3c.dom.Element;
 import resources.couchdb.CouchDB;
+import resources.osm.OSMClient;
 import resources.user.User;
 
 import java.util.ArrayList;
@@ -23,9 +24,9 @@ public class LocalisationServiceImpl implements LocalisationService {
 
         List<User> voisins = new ArrayList<User>();
         for (User u : db.getAllUsers()) {
-            /*if (distance(centralUser,u) <= rayonKM))
+            if (OSMClient.Distance(centralUser, u) <= rayonKm)
                 voisins.add(u);
-            */
+
         }
 
         Element ret = null;
